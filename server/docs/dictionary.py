@@ -258,7 +258,7 @@ arr =  {
         'target_file' : {
             'file_props':{
                 'file_type':'microsoft_word',
-                'url': r'C:\Users\nirco\Desktop\app\docs\target-file.docx'
+                'url': r'C:\Users\nir-c\Desktop\home_projects\fastapi-python-react-doc-converter\test-docs\target-file.docx'
             },   
             'font_style':{
                 'name':'David',
