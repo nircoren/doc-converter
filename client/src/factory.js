@@ -1,14 +1,12 @@
 function createDocConvertionRow(id, files) {
-    const wa =  {
+    return {
       id: id,
-      files: files.map(file => ({
+      docs: files.map(file => ({
         fileName: file.fileName,
         fileType: file.fileType,
         content: file.content || '',  // Default content can be an empty string
       })),
     };
-    console.log('wa',wa)
-    return wa
   }
   
   export default createDocConvertionRow;

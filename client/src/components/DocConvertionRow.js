@@ -1,14 +1,15 @@
-import React from 'react'
-import FileUpload from './FileUpload'
+import React from "react";
+import FileUpload from "./FileUpload";
 
-export default function DocConvertionRow({onAddRow}) {
-
+export default function DocConvertionRow({ rowIndex,rowData, onUploadDoc }) {
   return (
     <section>
-      <FileUpload/>
-      <FileUpload/>
-      <button className="btn" onClick={() => onAddRow()}>Add row</button>
-      <button className="btn" onClick={() => onAddRow()}>Button</button>
+      {rowData.map((docData, index) => 
+        <FileUpload key={index} rowIndex={rowIndex} inputIndex={index}/>
+      )}
+      <button className="btn" onClick={() => "wa"}>
+        Button
+      </button>
     </section>
-  )
+  );
 }

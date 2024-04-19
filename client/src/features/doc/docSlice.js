@@ -13,12 +13,18 @@ export const docSlice = createSlice({
   },
   reducers: {
     addDocConvertionRow(state, action) {
-      console.log('was')
-      state.docConvertionRows.push(createDocConvertionRow(0, action.payload.files));
+      state.docConvertionRows.push(createDocConvertionRow(0, action.payload.row));
+      console.log(state.docConvertionRows)
+    },
+    setDocContent(state,action) {
+      console.log('action',action)
+      const {rowIndex, inputIndex, doc} = action.payload
+      state.docConvertionRows[rowIndex].docs[inputIndex].content = doc
+      console.log('doc', state.docConvertionRows[rowIndex].docs[inputIndex].content)
     }
   }
 });
 
-export const { addDocConvertionRow } = docSlice.actions;
+export const { addDocConvertionRow, setDocContent } = docSlice.actions;
 
 export default docSlice.reducer;
