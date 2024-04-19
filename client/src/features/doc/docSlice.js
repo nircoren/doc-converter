@@ -1,23 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
+import createDocConvertionRow from '../../factory'
 
 export const docSlice = createSlice({
   name: 'doc',
   initialState: {
-    value: 0
+    docConvertionRows: [
+      createDocConvertionRow(0, [
+        { fileName: 'rishum', fileType: 'microsoft_word' },
+        { fileName: 'pinkas', fileType: 'microsoft_word' },
+      ])
+    ],
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    addDocConvertionRow(state, action) {
+      console.log('was')
+      state.docConvertionRows.push(createDocConvertionRow(0, action.payload.files));
     }
   }
 });
 
-export const { increment, decrement, incrementByAmount } = docSlice.actions;
+export const { addDocConvertionRow } = docSlice.actions;
 
 export default docSlice.reducer;

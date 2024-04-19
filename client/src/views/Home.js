@@ -1,10 +1,10 @@
 import React from 'react'
-import DocConvertionRow from '../components/DocConvertionRow'
+import DocConvertionPanel from '../components/DocConvertionPanel'
 
 function Home() {
   return (
     <main>
-        <DocConvertionRow/>
+        <DocConvertionPanel/>
     </main>
   )
 }
